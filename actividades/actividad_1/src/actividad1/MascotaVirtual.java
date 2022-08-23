@@ -24,7 +24,7 @@ public class MascotaVirtual {
         return nivel;
     }
 
-    public void setNivel(int nivel) {
+    private void setNivel(int nivel) {
         this.nivel += nivel;
     }
 
@@ -32,7 +32,7 @@ public class MascotaVirtual {
         return aburrida;
     }
 
-    public void setAburrida(boolean aburrida) {
+    private void setAburrida(boolean aburrida) {
         this.aburrida = aburrida;
     }
 
@@ -40,7 +40,7 @@ public class MascotaVirtual {
         return tiempo;
     }
 
-    public void setTiempo(int tiempo) {
+    private void setTiempo(int tiempo) {
         this.tiempo = tiempo;
     }
 
@@ -48,7 +48,7 @@ public class MascotaVirtual {
         return hambrienta;
     }
 
-    public void setHambrienta(boolean hambrienta) {
+    private void setHambrienta(boolean hambrienta) {
         this.hambrienta = hambrienta;
     }
 
@@ -56,7 +56,7 @@ public class MascotaVirtual {
         return contenta;
     }
 
-    public void setContenta(boolean contenta) {
+    private void setContenta(boolean contenta) {
         this.contenta = contenta;
     }
 
@@ -80,4 +80,10 @@ public class MascotaVirtual {
         }
 
     }
+
+    @Override
+    public String toString() {
+        return "MascotaVirtual \n\n" + "nivel=" + nivel + "\naburrida=" + aburrida + ",\ntiempo=" + tiempo + ",\nhambrienta=" + hambrienta + ",\ncontenta=" + contenta;
+    }
+    
 }

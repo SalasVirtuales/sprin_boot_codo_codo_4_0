@@ -1,16 +1,17 @@
-
 package actividad1;
 
-
 public class Principal {
+
     public static void main(String[] args) {
-        MascotaVirtual tamagotchi =new MascotaVirtual(10,false, 81 , true, false);
+        MascotaVirtual tamagotchi = new MascotaVirtual(10, false, 180, false, true);
+        
+        //System.out.println(tamagotchi.toString());
+        
+        System.out.println("/************************************/");
         tamagotchi.jugar();
-        System.out.println(tamagotchi.getNivel());
-        System.out.println(tamagotchi.isAburrida());
-        System.out.println(tamagotchi.getTiempo());
-        System.out.println(tamagotchi.isHambrienta());
-        System.out.println(tamagotchi.isContenta());
+        tamagotchi.comer();
+        tamagotchi.jugar();
+        System.out.println(tamagotchi.toString());
     }
-    
+
 }
