@@ -1,10 +1,10 @@
 package actividad1;
 
-
 public class MascotaVirtual {
 
     private int nivel;
-    private int aburrida;
+    private boolean aburrida;
+    private int tiempo;
     private boolean hambrienta;
     private boolean contenta;
 
@@ -12,9 +12,10 @@ public class MascotaVirtual {
 
     }
 
-    public MascotaVirtual(int nivel, int aburrida, boolean hambrienta, boolean contenta) {
+    public MascotaVirtual(int nivel, boolean aburrida, int tiempo, boolean hambrienta, boolean contenta) {
         this.nivel = nivel;
         this.aburrida = aburrida;
+        this.tiempo = tiempo;
         this.hambrienta = hambrienta;
         this.contenta = contenta;
     }
@@ -27,12 +28,20 @@ public class MascotaVirtual {
         this.nivel += nivel;
     }
 
-    public int getAburrida() {
+    public boolean isAburrida() {
         return aburrida;
     }
 
-    public void setAburrida(int aburrida) {
+    public void setAburrida(boolean aburrida) {
         this.aburrida = aburrida;
+    }
+
+    public int getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
     }
 
     public boolean isHambrienta() {
@@ -52,25 +61,23 @@ public class MascotaVirtual {
     }
 
     public void comer() {
-        if (getAburrida() > 80) {
+        if (isAburrida() && getTiempo() > 80 || isHambrienta()) {
             setContenta(true);
-            if (isHambrienta()) {
-                setContenta(true);
-            }
-            if (isContenta()) {
-                setNivel(1);
-            }
+        }
+        if (isContenta()) {
+            setNivel(1);
         }
     }
 
     public void jugar() {
-        if (getAburrida() > 80 || isContenta() && !isHambrienta()) {
+        if (!isHambrienta()) {
             if (isContenta()) {
                 setNivel(2);
             }
-            if (getAburrida() > 80) {
+            if (isAburrida()) {
                 setContenta(true);
             }
         }
+
     }
 }
