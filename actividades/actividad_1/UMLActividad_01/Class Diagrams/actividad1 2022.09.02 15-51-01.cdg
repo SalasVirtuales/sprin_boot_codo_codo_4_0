@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="actividad1">
+  <ClassDiagramComponents>
+    <Class name="MascotaVirtual" package="actividad1" visibility="public" xPosition="315.0" yPosition="2.0">
+      <Fields>
+        <Field name="nivel" type="int" visibility="private"/>
+        <Field name="aburrida" type="boolean" visibility="private"/>
+        <Field name="tiempoAburrimiento" type="int" visibility="private"/>
+        <Field name="hambrienta" type="boolean" visibility="private"/>
+        <Field name="contenta" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="nivel"/>
+          <Argument type="boolean" name="aburrida"/>
+          <Argument type="int" name="tiempo"/>
+          <Argument type="boolean" name="hambrienta"/>
+          <Argument type="boolean" name="contenta"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNivel" returnType="int" visibility="public"/>
+        <Method name="setNivel" returnType="void" visibility="public">
+          <Argument type="int" name="nivel"/>
+        </Method>
+        <Method name="isAburrida" returnType="boolean" visibility="public"/>
+        <Method name="setAburrida" returnType="void" visibility="public">
+          <Argument type="boolean" name="aburrida"/>
+        </Method>
+        <Method name="getTiempo" returnType="int" visibility="public"/>
+        <Method name="setTiempo" returnType="void" visibility="public">
+          <Argument type="int" name="tiempo"/>
+        </Method>
+        <Method name="isHambrienta" returnType="boolean" visibility="public"/>
+        <Method name="setHambrienta" returnType="void" visibility="public">
+          <Argument type="boolean" name="hambrienta"/>
+        </Method>
+        <Method name="isContenta" returnType="boolean" visibility="public"/>
+        <Method name="setContenta" returnType="void" visibility="public">
+          <Argument type="boolean" name="contenta"/>
+        </Method>
+        <Method name="setTiempoAburrimiento" returnType="void" visibility="public">
+          <Argument type="int" name="tiempoAburrimiento"/>
+        </Method>
+        <Method name="validarNivel" returnType="int" visibility="private">
+          <Argument type="int" name="nivel"/>
+        </Method>
+        <Method name="comer" returnType="void" visibility="public"/>
+        <Method name="jugar" returnType="void" visibility="public"/>
+        <Method name="puedeJugar" returnType="boolean" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Principal" package="actividad1" visibility="public" xPosition="53.0" yPosition="143.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
