@@ -4,7 +4,7 @@ public class MascotaVirtual {
 
     private int nivel;
     private boolean aburrida;
-    private int tiempo;
+    private int tiempoAburrimiento;
     private boolean hambrienta;
     private boolean contenta;
 
@@ -13,18 +13,19 @@ public class MascotaVirtual {
     }
 
     public MascotaVirtual(int nivel, boolean aburrida, int tiempo, boolean hambrienta, boolean contenta) {
-        this.nivel = nivel;
+        this.nivel = validarNivel(nivel);
         this.aburrida = aburrida;
-        this.tiempo = tiempo;
+        this.tiempoAburrimiento = tiempo;
         this.hambrienta = hambrienta;
         this.contenta = contenta;
     }
 
+    /*Metodos Accesors*/
     public int getNivel() {
         return nivel;
     }
 
-    private void setNivel(int nivel) {
+    public void setNivel(int nivel) {
         this.nivel += nivel;
     }
 
@@ -32,23 +33,23 @@ public class MascotaVirtual {
         return aburrida;
     }
 
-    private void setAburrida(boolean aburrida) {
+    public void setAburrida(boolean aburrida) {
         this.aburrida = aburrida;
     }
 
     public int getTiempo() {
-        return tiempo;
+        return tiempoAburrimiento;
     }
 
-    private void setTiempo(int tiempo) {
-        this.tiempo = tiempo;
+    public void setTiempo(int tiempo) {
+        this.tiempoAburrimiento = tiempo;
     }
 
     public boolean isHambrienta() {
         return hambrienta;
     }
 
-    private void setHambrienta(boolean hambrienta) {
+    public void setHambrienta(boolean hambrienta) {
         this.hambrienta = hambrienta;
     }
 
@@ -56,34 +57,55 @@ public class MascotaVirtual {
         return contenta;
     }
 
-    private void setContenta(boolean contenta) {
+    public void setContenta(boolean contenta) {
         this.contenta = contenta;
     }
 
+    public void setTiempoAburrimiento(int tiempoAburrimiento) {
+        this.tiempoAburrimiento = tiempoAburrimiento;
+    }
+
+    /*Metodos Personalizados*/
+    private int validarNivel(int nivel){
+        int valor = 0;
+        if(nivel>0){
+           valor = nivel;
+        }
+        return valor;
+    }
     public void comer() {
-        if (isAburrida() && getTiempo() > 80 || isHambrienta()) {
+       if(getTiempo()>80){
+        if (isAburrida() || isHambrienta()) {
             setContenta(true);
         }
         if (isContenta()) {
             setNivel(1);
-        }
+        }   
+       }
+        
     }
 
     public void jugar() {
-        if (!isHambrienta()) {
-            if (isContenta()) {
-                setNivel(2);
-            }
+        if (!puedeJugar()) {
             if (isAburrida()) {
                 setContenta(true);
             }
+
+            if (isContenta()) {
+                setNivel(2);
+
+            }
         }
 
+    }
+
+    public boolean puedeJugar() {
+        return this.isHambrienta();
     }
 
     @Override
     public String toString() {
-        return "MascotaVirtual \n\n" + "nivel=" + nivel + "\naburrida=" + aburrida + ",\ntiempo=" + tiempo + ",\nhambrienta=" + hambrienta + ",\ncontenta=" + contenta;
+        return "MascotaVirtual \n\n" + "nivel=" + nivel + "\naburrida=" + aburrida + ",\ntiempo=" + tiempoAburrimiento + ",\nhambrienta=" + hambrienta + ",\ncontenta=" + contenta;
     }
-    
+
 }
