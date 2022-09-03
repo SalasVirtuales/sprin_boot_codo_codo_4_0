@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="actividad_02">
+  <ClassDiagramComponents>
+    <Class name="Auto" package="actividad_02" visibility="public" isFinal="true" xPosition="140.0" yPosition="449.0">
+      <Fields>
+        <Field name="plusVelocidad" type="int" visibility="private"/>
+        <Field name="velocidadFinal" type="int" visibility="private"/>
+        <Field name="ruedaAuxilio" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getPlusVelocidad" returnType="int" visibility="public"/>
+        <Method name="setPlusVelocidad" returnType="void" visibility="public">
+          <Argument type="int" name="plusVelocidad"/>
+        </Method>
+        <Method name="getVelocidadFinal" returnType="int" visibility="public"/>
+        <Method name="setVelocidadFinal" returnType="void" visibility="public">
+          <Argument type="int" name="velocidadFinal"/>
+        </Method>
+        <Method name="isRuedaAuxilio" returnType="boolean" visibility="public"/>
+        <Method name="setRuedaAuxilio" returnType="void" visibility="public">
+          <Argument type="boolean" name="ruedaAuxilio"/>
+        </Method>
+        <Method name="getVelocidad" returnType="int" visibility="public"/>
+        <Method name="setVelocidad" returnType="void" visibility="public">
+          <Argument type="int" name="velocidad"/>
+        </Method>
+        <Method name="esSeguro" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Conductor" package="actividad_02" visibility="public" xPosition="10.0" yPosition="145.0">
+      <Fields>
+        <Field name="vehiculo" type="Vehiculo" visibility="private"/>
+        <Field name="registro" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Vehiculo" name="vehiculo"/>
+          <Argument type="boolean" name="registro"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getVehiculo" returnType="Vehiculo" visibility="public"/>
+        <Method name="setVehiculo" returnType="void" visibility="public">
+          <Argument type="Vehiculo" name="vehiculo"/>
+        </Method>
+        <Method name="isRegistro" returnType="boolean" visibility="public"/>
+        <Method name="setRegistro" returnType="void" visibility="public">
+          <Argument type="boolean" name="registro"/>
+        </Method>
+        <Method name="esSeguro" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Moto" package="actividad_02" visibility="public" isFinal="true" xPosition="449.0" yPosition="449.0">
+      <Fields>
+        <Field name="cantidadEspejos" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="cantidadEspejos"/>
+          <Argument type="int" name="velocidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCantidadEspejos" returnType="int" visibility="public"/>
+        <Method name="setCantidadEspejos" returnType="void" visibility="public">
+          <Argument type="int" name="cantidadEspejos"/>
+        </Method>
+        <Method name="getVelocidad" returnType="int" visibility="public"/>
+        <Method name="setVelocidad" returnType="void" visibility="public">
+          <Argument type="int" name="velocidad"/>
+        </Method>
+        <Method name="esSeguro" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Principal" package="actividad_02" visibility="public" xPosition="10.0" yPosition="9.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Vehiculo" package="actividad_02" visibility="public" isAbstract="true" xPosition="426.0" yPosition="175.0">
+      <Fields>
+        <Field name="velocidad" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="velocidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getVelocidad" returnType="int" visibility="public"/>
+        <Method name="setVelocidad" returnType="void" visibility="public">
+          <Argument type="int" name="velocidad"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Seguro" package="actividad_02" visibility="public" xPosition="426.0" yPosition="9.0">
+      <Methods>
+        <Method name="esSeguro" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="vehiculo" source="actividad_02.Conductor" target="actividad_02.Vehiculo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="actividad_02.Conductor" target="actividad_02.Seguro"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="actividad_02.Vehiculo" target="actividad_02.Seguro"/>
+    <IsRelation name="is" source="actividad_02.Moto" target="actividad_02.Vehiculo"/>
+    <UseRelation source="actividad_02.Conductor" target="actividad_02.Vehiculo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="actividad_02.Auto" target="actividad_02.Vehiculo"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

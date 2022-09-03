@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="actividad_03">
+  <ClassDiagramComponents>
+    <Class name="Ataque" package="actividad_03" visibility="public" xPosition="476.0" yPosition="513.0">
+      <Fields>
+        <Field name="ataque" type="String" visibility="private"/>
+        <Field name="potencia" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="ataque"/>
+          <Argument type="Integer" name="potencia"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getAtaque" returnType="String" visibility="public"/>
+        <Method name="setAtaque" returnType="void" visibility="public">
+          <Argument type="String" name="ataque"/>
+        </Method>
+        <Method name="getPotencia" returnType="Integer" visibility="public"/>
+        <Method name="setPotencia" returnType="void" visibility="public">
+          <Argument type="Integer" name="potencia"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Entrenador" package="actividad_03" visibility="public" xPosition="27.0" yPosition="93.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="pokebola" type="ArrayList&lt;Pokemon&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="atraparPokemon" returnType="void" visibility="public">
+          <Argument type="Pokemon" name="pokemon"/>
+        </Method>
+        <Method name="entrenarPokemon" returnType="void" visibility="public">
+          <Argument type="Pokemon" name="pokemon"/>
+          <Argument type="Ataque" name="ataque"/>
+        </Method>
+        <Method name="nivelAtaque" returnType="Integer" visibility="public">
+          <Argument type="Pokemon" name="pokemon"/>
+        </Method>
+        <Method name="atacarPokemon" returnType="void" visibility="public">
+          <Argument type="Pokemon" name="pokemon1"/>
+          <Argument type="Ataque" name="ataque"/>
+        </Method>
+        <Method name="mostrarAtques" returnType="void" visibility="public">
+          <Argument type="Pokemon" name="pokemon"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pokemon" package="actividad_03" visibility="public" xPosition="470.0" yPosition="17.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="nivelAtaque" type="Integer" visibility="private"/>
+        <Field name="tipo" type="String" visibility="private"/>
+        <Field name="ataques" type="ArrayList&lt;Ataque&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="tipo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getTipo" returnType="String" visibility="public"/>
+        <Method name="getNivelAtaque" returnType="Integer" visibility="public"/>
+        <Method name="setNivelAtaque" returnType="void" visibility="public">
+          <Argument type="Integer" name="nivelAtaque"/>
+        </Method>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="cargarAtaques" returnType="void" visibility="private">
+          <Argument type="Ataque" name="ataque"/>
+        </Method>
+        <Method name="aprendeAtaque" returnType="void" visibility="public">
+          <Argument type="Ataque" name="aprender"/>
+        </Method>
+        <Method name="mostrarAtaques" returnType="void" visibility="public"/>
+        <Method name="atacar" returnType="void" visibility="public">
+          <Argument type="Ataque" name="ataque"/>
+        </Method>
+        <Method name="sumaAtaques" returnType="Integer" visibility="public"/>
+        <Method name="eliminarAtaque" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Principal" package="actividad_03" visibility="public" xPosition="90.0" yPosition="398.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="actividad_03.Pokemon" target="actividad_03.Ataque" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pokebola" source="actividad_03.Entrenador" target="actividad_03.Pokemon" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Pokemon&gt;"/>
+    <UseRelation source="actividad_03.Entrenador" target="actividad_03.Pokemon" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ataques" source="actividad_03.Pokemon" target="actividad_03.Ataque" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Ataque&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

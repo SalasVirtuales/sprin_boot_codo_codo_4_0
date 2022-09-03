@@ -1,6 +1,6 @@
 package actividad_02;
 
-public abstract class Vehiculo {
+public abstract class Vehiculo implements Seguro{
 
     protected int velocidad;
 
@@ -20,5 +20,5 @@ public abstract class Vehiculo {
         this.velocidad = velocidad;
     }
 
-    public abstract boolean esSeguro();
+   
 }
